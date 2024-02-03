@@ -62,7 +62,7 @@ etcdctl put
 ```
 To set the right version of API set the environment variable ETCDCTL_API command
 
-export ETCDCTL_API=3
+## export ETCDCTL_API=3
 K8s Reference Docs:
 - https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/
 - https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/setup-ha-etcd-with-kubeadm/
