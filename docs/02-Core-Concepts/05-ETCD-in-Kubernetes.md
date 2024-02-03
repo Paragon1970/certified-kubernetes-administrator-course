@@ -37,6 +37,32 @@ In this section, we will take a look at ETCD role in kubernetes
    - Make sure etcd instances know each other by setting the right parameter in the **`etcd.service`** configuration. The **`--initial-cluster`** option where you need to specify the different instances of the etcd service.
      ![etcd-ha](../../images/etcd-ha.PNG)
 
+## ETCD - Commands (Optional)
+(Optional) Additional information about ETCDCTL Utility
+
+ETCDCTL is the CLI tool used to interact with ETCD.
+
+ETCDCTL can interact with ETCD Server using 2 API versions - Version 2 and Version 3.  By default its set to use Version 2. Each version has different sets of commands.
+
+For example ETCDCTL version 2 supports the following commands:
+```
+etcdctl backup
+etcdctl cluster-health
+etcdctl mk
+etcdctl mkdir
+etcdctl set
+```
+
+Whereas the commands are different in version 3
+```
+etcdctl snapshot save 
+etcdctl endpoint health
+etcdctl get
+etcdctl put
+```
+To set the right version of API set the environment variable ETCDCTL_API command
+
+export ETCDCTL_API=3
 K8s Reference Docs:
 - https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/
 - https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/setup-ha-etcd-with-kubeadm/
